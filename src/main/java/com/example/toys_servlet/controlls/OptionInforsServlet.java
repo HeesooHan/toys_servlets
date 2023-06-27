@@ -22,8 +22,11 @@ public class OptionInforsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            String search = request.getParameter("search");
 
+           // 요청 파라미터에서 "search" 값을 가져온다
+            String search = request.getParameter("search");
+            
+          // HTML 문자열을 생성한다
             String contents = "<!DOCTYPE html>\r\n" + //
                     "<html lang=\"en\">\r\n" + //
                     "<head>\r\n" + //

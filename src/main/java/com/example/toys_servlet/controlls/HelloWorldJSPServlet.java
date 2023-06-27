@@ -16,11 +16,13 @@ public class HelloWorldJSPServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            // String contents = "Yoju Lab";
+            // 요청 파라미터에서 "company"의 값을 가져온다
             String contents = request.getParameter("company");
-            
+
+              // 요청 속성에 "contents"라는 이름으로 값을 설정한다
             request.setAttribute("contents", contents);
-            // 다음 파일 호출
+
+            // 다음 JSP 파일을 호출하여 응답으로 전송한다
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/helloworldJSP.jsp");
             requestDispatcher.forward(request, response);
 

@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.example.toys_servlet.daos.OptionInforsDao;
 
-@WebServlet(urlPatterns = "/optionInforsDeleteServlet")
-public class OptionInforsDeleteServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/optionInforSelectServlet")
+public class OptionInforSelectServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -27,7 +27,7 @@ public class OptionInforsDeleteServlet extends HttpServlet {
             // 응답의 Content-Type을 설정하고 PrintWriter를 이용하여 응답을 생성한다
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter printWriter = response.getWriter();
-            String contents = "Delete count : "+count;
+            String contents = "Select count : "+count;
             printWriter.println(contents);
             printWriter.close();
         } catch (Exception e) {
