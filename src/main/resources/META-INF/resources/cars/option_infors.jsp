@@ -31,7 +31,7 @@
                         <tr>
                             <th>RESPONDENTS_ID</th>
                             <th>NAME</th>
-                            <th>Delect</th>
+                            <th>Delete</th>
                             <th>상세정보</th>
                         </tr>
                     </thead>
