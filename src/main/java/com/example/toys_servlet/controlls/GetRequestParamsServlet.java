@@ -13,11 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 public class GetRequestParamsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
+        try { // 요청 파라미터에서 "first_name"과 "second_name"의 값을 가져온다
             String firstName = request.getParameter("first_name");
             String secondName = request.getParameter("second_name");
             PrintWriter printWriter = response.getWriter();
-
+             // 응답으로 전송할 HTML 문자열 생성
             String contents = "<!DOCTYPE html>\r\n" +
                     "<html lang=\"en\">\r\n" +
                     "<head>\r\n" +
@@ -32,7 +32,7 @@ public class GetRequestParamsServlet extends HttpServlet {
                     "        Second Name: " + secondName + "</div>\r\n" +
                     "</body>\r\n" +
                     "</html>";
-
+            // 응답으로 HTML 내용을 클라이언트에게 전송
             printWriter.println(contents);
             printWriter.close();
         } catch (Exception e) {

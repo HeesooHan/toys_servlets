@@ -23,7 +23,7 @@ public class ConnectDBServlet2 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            // 클라이언트에 html화면제공
+                // 클라이언트에게 HTML 화면을 제공하기 위한 문자열 생성
             String contents = "<!DOCTYPE html>\r\n" + //
                     "<html lang=\"en\">\r\n" + //
                     "<head>\r\n" + //
@@ -45,10 +45,8 @@ public class ConnectDBServlet2 extends HttpServlet {
                     "            </thead>\r\n" + //
                     "            <tbody>\r\n";
 
-            // - query Edit
-           // FactorysDao factorysDao = new FactorysDao();
+        // 쿼리를 통해 데이터베이스에서 팩토리 정보를 가져오는 부분
             ArrayList factoryList = new ArrayList();
-           // factoryList = factorysDao.selectAll();
             for(int i=0; i < factoryList.size(); i=i+1){
                 HashMap hashMap = new HashMap();
                 hashMap = (HashMap) factoryList.get(i);
@@ -69,32 +67,11 @@ public class ConnectDBServlet2 extends HttpServlet {
             printWriter.println(contents);
             printWriter.close();
 
-            // SELECT count(*) AS CNT FROM factorys;
-            
-            // INSERT INTO factorys
-            // (COMPANY_ID,COMPANY)
-            // value
-            // ('CAR-01', 'AUDI');
-
+        // 데이터베이스에서 데이터를 조회, 삽입, 수정, 삭제하는 쿼리 예시
             String COMPANY_ID = "CAR-01";
-            String COMPANY = "AUDI";
-            // query ="INSERT INTO factorys " + "(COMPANY_ID,COMPANY) " + "value " +
-            // "('"+COMPANY_ID+"', '"+COMPANY+"') ";
-            // // 변수를 넣어줄때 싱글 쿼테이션 '' 안에 더블 쿼테이션 ""을 넣고 ++사이에 변수를 넣어줘야한다.
-            // int count = statement.executeUpdate(query);
-
+            String COMPANY = "AUDI";        
             COMPANY_ID = "CAR-01";
-            COMPANY = "페라리";
-            //query = "UPDATE factorys " + "SET COMPANY ='" + COMPANY + "' " + "WHERE COMPANY_ID ='" + COMPANY_ID + "' ";
-                                                                                                                        
-                                                                                                                        
-
-            // DELETE FROM factorys
-            // WHERE COMPANY_ID = 'CAR-01';
-            //query = "DELETE FROM factorys " + "WHERE COMPANY_ID = '" + COMPANY_ID + "'"; // CAR-01 페라리 삭제
-
-            //int count = statement.executeUpdate(query);
-
+            COMPANY = "페라리";                                                                                                                                                                                                                                           
             System.out.println();
 
         } catch (Exception e) {
