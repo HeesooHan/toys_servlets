@@ -25,7 +25,7 @@ public class OptionInforsServlet extends HttpServlet {
 
            // 요청 파라미터에서 "search" 값을 가져온다
             String search = request.getParameter("search");
-            
+
           // HTML 문자열을 생성한다
             String contents = "<!DOCTYPE html>\r\n" + //
                     "<html lang=\"en\">\r\n" + //
@@ -48,8 +48,8 @@ public class OptionInforsServlet extends HttpServlet {
                     "        <table class=\"table table-bordered table-hover\">\r\n" + //
                     "            <thead>\r\n" + //
                     "                <tr>\r\n" + //
-                    "                    <th>OPTION_INFOR_ID</th>\r\n" + //
-                    "                    <th>OPTION_NAME</th>\r\n" + //
+                    "                    <th>RESPONDENTS_ID</th>\r\n" + //
+                    "                    <th>RESPONDENTS</th>\r\n" + //
                     "                </tr>\r\n" + //
                     "            </thead>\r\n" + //
                     "            <tbody>\r\n";
@@ -61,8 +61,8 @@ public class OptionInforsServlet extends HttpServlet {
                 HashMap optionInforRecord = new HashMap<>();
                 optionInforRecord = (HashMap) optionInforList.get(i);
                 contents = contents + "                <tr>\r\n" + //
-                        "                    <td>"+optionInforRecord.get("OPTION_INFOR_ID")+"</td>\r\n" + //
-                        "                    <td>"+optionInforRecord.get("OPTION_NAME")+"</td>\r\n" + //
+                        "                    <td>"+optionInforRecord.get("RESPONDENTS_ID")+"</td>\r\n" + //
+                        "                    <td>"+optionInforRecord.get("RESPONDENTS")+"</td>\r\n" + //
                         "                </tr>\r\n";
             }
             contents = contents + "            </tbody>\r\n" + //
