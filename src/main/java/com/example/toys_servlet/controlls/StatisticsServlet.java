@@ -22,12 +22,13 @@ public class StatisticsServlet extends HttpServlet {
 
             // OptionInforsDao 객체를 생성하여 "unique_id"를 이용하여 레코드를 삭제한다
             OptionInforsDao optionInforsDao = new OptionInforsDao();
-            int count = OptionInforsDao.Statistics(unique_id);
+            int count = OptionInforsDao.Statistics();
 
             // 응답의 Content-Type을 설정하고 PrintWriter를 이용하여 응답을 생성한다
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter printWriter = response.getWriter();
-            String contents = "Delete count : "+count;
+            String contents= "SELECT COUNT(DISTINCT RESPONDENTS_ID) AS TotalCount\r\n" + //
+                            "FROM statistics;";
             printWriter.println(contents);
             printWriter.close();
         } catch (Exception e) {
