@@ -35,7 +35,7 @@ public class OptionInforsJSPServlet extends HttpServlet {
             request.setAttribute("search", search);
             request.setAttribute("optionInforList", optionInforList);
 
-            // 응답의 Content-Type을 설정하고 다음 JSP 파일을 호출하여 결과를 출력한다
+            //응답의 Content-Type을 설정하고 다음 JSP 파일을 호출하여 결과를 출력한다
             response.setContentType("text/html;charset=UTF-8");
 
             // 다음 파일 호출

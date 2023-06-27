@@ -11,15 +11,28 @@
         </head>
 
         <body>
+            <div style ="text-align:center";>
+                <img class="mb-4" src="https://i.namu.wiki/i/fmqo9BhDdF7UaaWj1u36bOCuOxoOCjFX78s7ZlHcIW63TzCUpuWU37aXQHwFbNeAVTasWMtTWJYSmUtlwGtT6Q.webp" alt="" width="200" height="200">
+                <h1 class="h3 mb-3 fw-normal">회원정보</h1> 
+            </div>
+
             <div class="container">
-            <img src="images/단추.png" width="100" height="60"alt="">
-            <H1>회원정보</H1>
+                <% String search=(String) request.getAttribute("search"); %>
+                    <form action="/optionInforsJSPServlet">
+                        <label>검색
+                            <input type="text" name="search" value="<%= search %>">
+                        </label>
+                        <button>검색 하기</button>
+                    </form> 
+            </div>
+            <div class="container">
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <th>RESPONDENTS_ID</th>
                             <th>NAME</th>
-                            <th>Select</th>
+                            <th>Delect</th>
+                            <th>상세정보</th>
                         </tr>
                     </thead>
                     <% ArrayList optionInforList=new ArrayList<>();
@@ -32,7 +45,6 @@
                                     %>
                                     <form>
                                         <input type="hidden" name="unique_id" value="<%= optionInforRecord.get("RESPONDENTS_ID") %>">
-
                                         <tr>
                                             <td>
                                                 <%= optionInforRecord.get("RESPONDENTS_ID") %>
@@ -40,9 +52,16 @@
                                             <td>
                                                 <%= optionInforRecord.get("RESPONDENTS") %>
                                             </td>
+
                                             <td>
-                                                <button type="submit" formaction="/optionInforsSelectServlet">
-                                                   상세정보
+                                                <button type="submit" formaction="/optionInforsDeleteServlet">
+                                                    <%= optionInforRecord.get("RESPONDENTS_ID") %>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                
+                                                <button type="submit" formaction="/optionInforSelectServlet">
+                                                    <%= optionInforRecord.get("RESPONDENTS") %> 상세정보
                                                 </button>
                                             </td>
                                         </tr>

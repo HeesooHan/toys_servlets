@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.HashMap" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="text-align:center;">
+        <img class="mb-4"
+            src="https://i.namu.wiki/i/fmqo9BhDdF7UaaWj1u36bOCuOxoOCjFX78s7ZlHcIW63TzCUpuWU37aXQHwFbNeAVTasWMtTWJYSmUtlwGtT6Q.webp"
+            alt="" width="200" height="200">
+        <h1 class="h3 mb-3 fw-normal">상세정보</h1>
+    </div>
+
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>RESPONDENTS_ID</th>
+                    <th>RESPONDENTS</th>
+                    <th>PASSWORD</th>
+                </tr>
+            </thead>
+            <% HashMap optionInforRecord = (HashMap) request.getAttribute("optionInforRecord"); %>
+            <tbody>
+                <form>
+                    <input type="hidden" name="unique_id" value="<%= optionInforRecord.get("RESPONDENTS_ID") %>">
+                    <tr>
+                        <td>
+                            <%= optionInforRecord.get("RESPONDENTS_ID") %>
+                        </td>
+                        <td>
+                            <%= optionInforRecord.get("RESPONDENTS") %>
+                        </td>
+                        <td>
+                            <%= optionInforRecord.get("PASSWORD") %>
+                        </td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
