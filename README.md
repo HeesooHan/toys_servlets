@@ -16,7 +16,7 @@
 ## REFER
 
 - 화면정의서
-- ERD
+- ERD [erd.png](/src/main/java/erd.png)
 - 요구사항
 
 > 메뉴 : 회원 관리, 로그인/아웃, 설문하기, 설문 통계  
