@@ -38,6 +38,8 @@
         <nav class="navbar navbar-expand">
             <div class="navbar-brand">
                 <div class="navbar-nav me-auto">
+                    <img class="mb-4" src="https://i.namu.wiki/i/fmqo9BhDdF7UaaWj1u36bOCuOxoOCjFX78s7ZlHcIW63TzCUpuWU37aXQHwFbNeAVTasWMtTWJYSmUtlwGtT6Q.webp" 
+                    alt="" width="40" height="40">
                     <a href="Survey.html" class="nav-link">설문하기</a>
                     <a href="cars/option_infors.jsp" class="nav-link">회원관리</a>
                     <a href="cars/statistics.jsp" class="nav-link">설문통계</a>

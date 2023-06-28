@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%@ page import="java.util.HashMap, java.util.ArrayList" %>
+<%@ page import="java.util.HashMap, java.util.ArrayList" %>
         <!DOCTYPE html>
         <html lang="en">
-
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +23,7 @@
                         </label>
                         <button>검색 하기</button>
                     </form> 
+                    <P></P>
             </div>
             <div class="container">
                 <table class="table table-bordered table-hover">
@@ -60,7 +60,7 @@
                                             </td>
                                             <td>
                                                 
-                                                <button type="submit" formaction="/optionInforSelectServlet">
+                                                <button class="btn btn-outline-dark"type="submit" formaction="/optionInforSelectServlet">
                                                     <%= optionInforRecord.get("RESPONDENTS") %> 상세정보
                                                 </button>
                                             </td>
