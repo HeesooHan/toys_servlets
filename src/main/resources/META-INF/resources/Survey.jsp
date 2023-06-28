@@ -20,7 +20,7 @@
         </div>
         <hr>
         <div class="container">
-            <form action="Survey.html">
+            <form action="Survey.jsp">
                 <div class="row">
                     <h5>Q1. 교수는 수업 전 강의 목표를 명확히 제시하였습니까?</h5>
                     <div class="card-body">
@@ -99,8 +99,8 @@
                                     </div>
 
                                     <div class="survey-buttons">
-                                        <button onclick="ans_chek()" class="btn btn-info">닫기</button>
-                                        <button onclick="ans_chek()" class="btn btn-info">설문제출</button>
+                                        <button type="submit" class="btn btn-dark " >닫기</button>
+                                        <button type="submit" class="btn btn-dark " >설문제출</button>
                                     </div>
                                 </div>
                             </div>

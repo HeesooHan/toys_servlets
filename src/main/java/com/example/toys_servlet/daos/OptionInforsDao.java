@@ -58,7 +58,34 @@ public class OptionInforsDao {
         }
         return optionInfoRecord;
     }
-   
+
+    //통계2
+   public HashMap<String, Object> getStatistics2() {
+        HashMap<String, Object> optionInfoRecord = new HashMap<>(); // 결과를 저장할 빈 HashMap 객체 생성
+        try {
+            Commons commons = new Commons();
+            Statement statement = commons.getStatement();
+            //총설문자수 query
+            String query = "SELECT ANS.CHOICE, STT.CHOICE_ID, COUNT(*) AS CNT " +
+                        "FROM statistics AS STT " +
+                        "INNER JOIN CHOICE AS ANS ON STT.CHOICE_ID = ANS.CHOICE_ID " +
+                        "GROUP BY ANS.CHOICE_ID";
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                String choice = resultSet.getString("CHOICE");
+                int count = resultSet.getInt("CNT");
+                optionInfoRecord.put(choice, count);
+            }
+            
+            resultSet.close();
+            statement.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        return optionInfoRecord;
+}
     
     //문항
     

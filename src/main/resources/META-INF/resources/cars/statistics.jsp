@@ -24,6 +24,15 @@
                     <td>총 설문자 수</td>
                     <td><%= optionInforRecord.get("TotalCount") %></td>
                 </tr>
+                <tr>
+                    <td>답항별 총 수</td>
+                    <td><%= optionInforRecord.get("Choice") %></td>
+                    <td><%= optionInforRecord.get("CNT") %></td>
+                </tr>
+                <tr>
+                    <td>문항별 총 수</td>
+                  <!-- <td><%= optionInforRecord.get("TotalCount") %></td> -->
+                </tr>
             </tbody>
         </table>
     </div>

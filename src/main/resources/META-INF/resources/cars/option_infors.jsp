@@ -2,6 +2,7 @@
 <%@ page import="java.util.HashMap, java.util.ArrayList" %>
         <!DOCTYPE html>
         <html lang="en">
+
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,6 @@
                 <img class="mb-4" src="https://i.namu.wiki/i/fmqo9BhDdF7UaaWj1u36bOCuOxoOCjFX78s7ZlHcIW63TzCUpuWU37aXQHwFbNeAVTasWMtTWJYSmUtlwGtT6Q.webp" alt="" width="200" height="200">
                 <h1 class="h3 mb-3 fw-normal">회원정보</h1> 
             </div>
-
             <div class="container">
                 <% String search=(String) request.getAttribute("search"); %>
                     <form action="/optionInforsJSPServlet">
@@ -26,13 +26,13 @@
                     </form> 
                     <P></P>
             </div>
+
             <div class="container">
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <th>RESPONDENTS_ID</th>
                             <th>NAME</th>
-                            <th>Delete</th>
                             <th>상세정보</th>
                         </tr>
                     </thead>
@@ -44,20 +44,20 @@
                                 <% HashMap optionInforRecord=new HashMap<>();
                                     optionInforRecord = (HashMap) optionInforList.get(i);
                                     %>
-                                    <tr>
-                                        <form>
-                                    <tr>
-                                        <input type="hidden" name="unique_id" value="<%= optionInforRecord.get("
-                                            RESPONDENTS_ID") %>">
+                                    <form>
+                                        <input type="hidden" name="unique_id" value="<%= optionInforRecord.get("RESPONDENTS_ID") %>">
 
+                                        <tr>
                                             <td>
-                                                <button class="btn btn-outline-dark" type="submit" formaction="/optionInforsDeleteServlet">
-                                                    <%= optionInforRecord.get("RESPONDENTS_ID") %>
-                                                </button>
+                                                <%= optionInforRecord.get("RESPONDENTS_ID") %>
                                             </td>
                                             <td>
+                                                <%= optionInforRecord.get("RESPONDENTS") %>
+                                            </td>
+    
+                                            <td>
                                                 
-                                                <button class="btn btn-outline-dark" type="submit" formaction="/optionInforSelectServlet">
+                                                <button class="btn btn-outline-dark"type="submit" formaction="/optionInforSelectServlet">
                                                     <%= optionInforRecord.get("RESPONDENTS") %> 상세정보
                                                 </button>
                                             </td>
