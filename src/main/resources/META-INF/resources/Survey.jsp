@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,11 +39,11 @@
             <div class="navbar-brand">
                 <div class="navbar-nav me-auto">
                     <a href="Survey.html" class="nav-link">설문하기</a>
-                    <a href="option_infors.jsp" class="nav-link">회원관리</a>
-                    <a href="statistics.html" class="nav-link">설문통계</a>
+                    <a href="cars/option_infors.jsp" class="nav-link">회원관리</a>
+                    <a href="cars/statistics.jsp" class="nav-link">설문통계</a>
                 </div>
             </div>
-            <button onclick="location.href='login.html'" class="btn ms-auto " style="float: right;">로그아웃</button>
+            <button onclick="location.href='login.html'" class="btn ms-auto " style="float: right;">로그인</button>
         </nav>
     </div>
     <br>

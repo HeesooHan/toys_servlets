@@ -8,20 +8,41 @@ import java.util.HashMap;
 import com.example.toys_servlet.commons.Commons;
 
 public class OptionInforsDao {
-    //상세보기를 위한 select
+    //통계
+     public static int Statistics() {
+        int count = 0;
+        try {
+            Commons commons = new Commons();
+            Statement statement = commons.getStatement(); // workbench에서 작성한 쿼리를 실행하는 객체
+            String  query = "SELECT COUNT(DISTINCT RESPONDENTS_ID) AS TotalCount\r\n" + //
+                            "FROM statistics;";
+            count = statement.executeUpdate(query); // 쿼리 실행 결과로 영향 받은 레코드의 개수를 반환
+        } catch (Exception e) {
+            System.out.println(e.getMessage()); // 예외 발생 시 메시지 출력
+        }
+        return count; // 삭제된 레코드 개수 반환
+    }
+    
+    //문항
+    
+    //상세보기를 위한 select 메서드
         public HashMap SelectWithUniqueId(String unique_id) {
-        HashMap optionInforRecord = new HashMap<>();
+        HashMap optionInforRecord = new HashMap<>();  // 빈 HashMap 객체를 생성합니다. 결과저장
         try {
             Commons commons = new Commons();
             Statement statement = commons.getStatement();
+            //unique_id를 기반으로 respondents 테이블에서 레코드를 선택합니다.
             String query = "SELECT * FROM respondents WHERE RESPONDENTS_ID = '" + unique_id + "';";
             ResultSet resultSet = statement.executeQuery(query);
 
-            if (resultSet.next()) {
+            if (resultSet.next()) { 
+                // 결과를 optionInforRecord HashMap에 저장
                 optionInforRecord.put("RESPONDENTS_ID", resultSet.getString("RESPONDENTS_ID"));
                 optionInforRecord.put("RESPONDENTS", resultSet.getString("RESPONDENTS"));
                 optionInforRecord.put("PASSWORD", resultSet.getString("PASSWORD"));
             }
+            /* if (resultSet.next())은 .ResultSet에 적어도 하나의 데이터 행이 있는지 확인. 
+            조건 resultSet.next()가 true로 평가되면 ResultSet에 사용 가능한 데이터 행이 있고 if 블록 내부의 코드가 실행됨 */
 
             resultSet.close();
             statement.close();
@@ -30,7 +51,8 @@ public class OptionInforsDao {
         }
         return optionInforRecord;
     }
-
+    
+    //Delete 메서드
     public static int DeleteWithUniqueID(String unique_id) {
         int count = 0;
         try {

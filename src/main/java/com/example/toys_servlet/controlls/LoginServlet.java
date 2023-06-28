@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 // /session/CreateServlet?username=yojulab&password=1234
-@WebServlet(urlPatterns = "/session/CreateServlet")
-public class SessionCreateServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/loginServlet")
+public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -38,8 +38,10 @@ public class SessionCreateServlet extends HttpServlet {
                     httpSession.setAttribute("username", username);
                     httpSession.setAttribute("password", password);
                     printWriter.println("<div>" + username + ", " + password + "</div>");
+                   
+                    // response.sendRedirect("/설문조사페이지")
                 } else {
-                    printWriter.println("<div>Faild</div>");  // 로그인 실패
+                     response.sendRedirect("/loginServlet");
                 }
             }
 
