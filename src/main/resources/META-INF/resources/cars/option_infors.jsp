@@ -10,7 +10,8 @@
         </head>
 
         <body>
-            <div style ="text-align:center";>
+            <%@ include file="/top_menus.jsp" %>
+            <div style="text-align:center;">
                 <img class="mb-4" src="https://i.namu.wiki/i/fmqo9BhDdF7UaaWj1u36bOCuOxoOCjFX78s7ZlHcIW63TzCUpuWU37aXQHwFbNeAVTasWMtTWJYSmUtlwGtT6Q.webp" alt="" width="200" height="200">
                 <h1 class="h3 mb-3 fw-normal">회원정보</h1> 
             </div>
@@ -21,7 +22,7 @@
                         <label>검색
                             <input type="text" name="search" value="<%= search %>">
                         </label>
-                        <button>검색 하기</button>
+                        <button class="btn btn-outline-dark"  >검색 하기</button>
                     </form> 
                     <P></P>
             </div>
@@ -54,13 +55,13 @@
                                             </td>
 
                                             <td>
-                                                <button type="submit" formaction="/optionInforsDeleteServlet">
+                                                <button class="btn btn-outline-dark" type="submit" formaction="/optionInforsDeleteServlet">
                                                     <%= optionInforRecord.get("RESPONDENTS_ID") %>
                                                 </button>
                                             </td>
                                             <td>
                                                 
-                                                <button class="btn btn-outline-dark"type="submit" formaction="/optionInforSelectServlet">
+                                                <button class="btn btn-outline-dark" type="submit" formaction="/optionInforSelectServlet">
                                                     <%= optionInforRecord.get("RESPONDENTS") %> 상세정보
                                                 </button>
                                             </td>

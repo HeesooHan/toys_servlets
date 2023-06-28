@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <%@ include file="/top_menus.jsp" %>
     <div style="text-align:center;">
         <img class="mb-4"
             src="https://i.namu.wiki/i/fmqo9BhDdF7UaaWj1u36bOCuOxoOCjFX78s7ZlHcIW63TzCUpuWU37aXQHwFbNeAVTasWMtTWJYSmUtlwGtT6Q.webp"
