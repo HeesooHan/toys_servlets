@@ -21,7 +21,7 @@
                         <label>검색
                             <input type="text" name="search" value="<%= search %>">
                         </label>
-                        <button>검색 하기</button>
+                        <button class="btn btn-outline-dark">검색 하기</button>
                     </form> 
                     <P></P>
             </div>
@@ -54,7 +54,7 @@
                                             </td>
 
                                             <td>
-                                                <button type="submit" formaction="/optionInforsDeleteServlet">
+                                                <button class="btn btn-outline-dark" type="submit" formaction="/optionInforsDeleteServlet">
                                                     <%= optionInforRecord.get("RESPONDENTS_ID") %>
                                                 </button>
                                             </td>
