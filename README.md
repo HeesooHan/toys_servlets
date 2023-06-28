@@ -22,7 +22,7 @@
 
 ## Run
 
-- YouTube(링크연겨리
+- YouTube(링크연결
   
 ## THE END 
 
