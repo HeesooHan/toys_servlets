@@ -44,15 +44,11 @@
                                 <% HashMap optionInforRecord=new HashMap<>();
                                     optionInforRecord = (HashMap) optionInforList.get(i);
                                     %>
-                                    <form>
-                                        <input type="hidden" name="unique_id" value="<%= optionInforRecord.get("RESPONDENTS_ID") %>">
-                                        <tr>
-                                            <td>
-                                                <%= optionInforRecord.get("RESPONDENTS_ID") %>
-                                            </td>
-                                            <td>
-                                                <%= optionInforRecord.get("RESPONDENTS") %>
-                                            </td>
+                                    <tr>
+                                        <form>
+                                    <tr>
+                                        <input type="hidden" name="unique_id" value="<%= optionInforRecord.get("
+                                            RESPONDENTS_ID") %>">
 
                                             <td>
                                                 <button class="btn btn-outline-dark" type="submit" formaction="/optionInforsDeleteServlet">
