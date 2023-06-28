@@ -10,9 +10,11 @@
         </head>
 
         <body>
-            <div style ="text-align:center";>
-                <img class="mb-4" src="https://i.namu.wiki/i/fmqo9BhDdF7UaaWj1u36bOCuOxoOCjFX78s7ZlHcIW63TzCUpuWU37aXQHwFbNeAVTasWMtTWJYSmUtlwGtT6Q.webp" alt="" width="200" height="200">
-                <h1 class="h3 mb-3 fw-normal">회원정보</h1> 
+            <div style="text-align:center" ;>
+                <img class="mb-4"
+                    src="https://i.namu.wiki/i/fmqo9BhDdF7UaaWj1u36bOCuOxoOCjFX78s7ZlHcIW63TzCUpuWU37aXQHwFbNeAVTasWMtTWJYSmUtlwGtT6Q.webp"
+                    alt="" width="200" height="200">
+                <h1 class="h3 mb-3 fw-normal">회원정보</h1>
             </div>
 
             <div class="container">
@@ -43,15 +45,11 @@
                                 <% HashMap optionInforRecord=new HashMap<>();
                                     optionInforRecord = (HashMap) optionInforList.get(i);
                                     %>
-                                    <form>
-                                        <input type="hidden" name="unique_id" value="<%= optionInforRecord.get("RESPONDENTS_ID") %>">
-                                        <tr>
-                                            <td>
-                                                <%= optionInforRecord.get("RESPONDENTS_ID") %>
-                                            </td>
-                                            <td>
-                                                <%= optionInforRecord.get("RESPONDENTS") %>
-                                            </td>
+                                    <tr>
+                                        <form>
+                                    <tr>
+                                        <input type="hidden" name="unique_id" value="<%= optionInforRecord.get("
+                                            RESPONDENTS_ID") %>">
 
                                             <td>
                                                 <button class="btn btn-outline-dark" type="submit" formaction="/optionInforsDeleteServlet">

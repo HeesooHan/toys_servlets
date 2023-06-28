@@ -23,7 +23,7 @@ public class ConnectDBServlet2 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-                // 클라이언트에게 HTML 화면을 제공하기 위한 문자열 생성
+            // 클라이언트에게 HTML 화면을 제공하기 위한 문자열 생성
             String contents = "<!DOCTYPE html>\r\n" + //
                     "<html lang=\"en\">\r\n" + //
                     "<head>\r\n" + //
@@ -45,9 +45,9 @@ public class ConnectDBServlet2 extends HttpServlet {
                     "            </thead>\r\n" + //
                     "            <tbody>\r\n";
 
-        // 쿼리를 통해 데이터베이스에서 팩토리 정보를 가져오는 부분
+            // 쿼리를 통해 데이터베이스에서 팩토리 정보를 가져오는 부분
             ArrayList factoryList = new ArrayList();
-            for(int i=0; i < factoryList.size(); i=i+1){
+            for (int i = 0; i < factoryList.size(); i = i + 1) {
                 HashMap hashMap = new HashMap();
                 hashMap = (HashMap) factoryList.get(i);
                 contents = contents + "  <tr>\r\n" + //
@@ -55,7 +55,7 @@ public class ConnectDBServlet2 extends HttpServlet {
                         "                    <td>" + hashMap.get("COMPANY") + "</td>\r\n" + //
                         "                </tr>\r\n";
             }
-                
+
             contents = contents + "</tbody>\r\n" + //
                     "</table>\r\n" + //
                     "</div>\r\n" + //
@@ -67,11 +67,11 @@ public class ConnectDBServlet2 extends HttpServlet {
             printWriter.println(contents);
             printWriter.close();
 
-        // 데이터베이스에서 데이터를 조회, 삽입, 수정, 삭제하는 쿼리 예시
+            // 데이터베이스에서 데이터를 조회, 삽입, 수정, 삭제하는 쿼리 예시
             String COMPANY_ID = "CAR-01";
-            String COMPANY = "AUDI";        
+            String COMPANY = "AUDI";
             COMPANY_ID = "CAR-01";
-            COMPANY = "페라리";                                                                                                                                                                                                                                           
+            COMPANY = "페라리";
             System.out.println();
 
         } catch (Exception e) {
