@@ -26,7 +26,7 @@
 
 ## Run
 
-- YouTube(링크연결
+- YouTube
   
 ## THE END 
 
