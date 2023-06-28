@@ -11,25 +11,34 @@
     <link rel="stylesheet" href="../static/css/commons.css">
 </head>  
 <body>
-
-      <div class="container login-window">
+  <main class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="container login-window">
         <div class="row">
-          <div class="col-md-6 offset-md-3">
-            <h2>Login</h2>
-
-            <form action="/session/CreateServlet" method="post">
-              <div class="form-group">
-                <input class="form-control" type="text" name="email" placeholder="Email address" id="idemail">
-              </div>
-              <div class="form-group">
-                <input class="form-control" type="password" name="password" placeholder="Password" id="idpassword">
-              </div>
-              <button type="submit" class="btn btn-primary">LogIn</button>
-            </form>
-          </div>
+            <div class="col-md-6 offset-md-3">
+                <form action="/Survey.jsp" method="post">
+                  <div style="text-align: center;">
+                    <img class="mb-4"
+                      src="https://i.namu.wiki/i/fmqo9BhDdF7UaaWj1u36bOCuOxoOCjFX78s7ZlHcIW63TzCUpuWU37aXQHwFbNeAVTasWMtTWJYSmUtlwGtT6Q.webp"
+                      alt="" width="200" height="200">
+                  </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="RESPONDENTS_ID" placeholder="ID" id="idemail">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" name="PASSWORDdi" placeholder="Password" id="idpassword">
+                    </div>
+                    <div style="text-align: center;">
+                          <p></p>
+                    <button type="submit" class="btn btn-dark " >LogIn</button>
+                    </div>
+                
+                </form>
+            </div>
         </div>
-      </div>
+    </div>
+  </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </html>
 <% System.out.println("Login - doGet() done."); %>

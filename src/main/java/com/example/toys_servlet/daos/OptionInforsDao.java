@@ -1,6 +1,9 @@
 package com.example.toys_servlet.daos;
 
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,20 +11,54 @@ import java.util.HashMap;
 import com.example.toys_servlet.commons.Commons;
 
 public class OptionInforsDao {
+    //로그인
+// public boolean verifyLogin(String respondentsId, String password) throws SQLException {
+//     // Get the database connection from the Commons object
+//     Commons commons = new Commons();
+//     Connection connection = commons.getConnection();
+
+//     // Prepare the SQL statement to fetch users from the database
+//     String sql = "SELECT * FROM users WHERE respondentsId = ? AND password = ?";
+//     PreparedStatement statement = connection.prepareStatement(sql);
+//     statement.setString(1, respondentsId);
+//     statement.setString(2, password);
+
+//     // Execute the query
+//     ResultSet resultSet = statement.executeQuery();
+
+//     // Check if user exists
+//     boolean loginSuccessful = resultSet.next();
+
+//     // Close database resources
+//     resultSet.close();
+//     statement.close();
+
+//     return loginSuccessful;
+// }
+
     //통계
-     public static int Statistics() {
-        int count = 0;
+    public HashMap<String, Object> getStatistics() {
+        HashMap<String, Object> optionInfoRecord = new HashMap<>(); // 결과를 저장할 빈 HashMap 객체 생성
         try {
             Commons commons = new Commons();
-            Statement statement = commons.getStatement(); // workbench에서 작성한 쿼리를 실행하는 객체
-            String  query = "SELECT COUNT(DISTINCT RESPONDENTS_ID) AS TotalCount\r\n" + //
-                            "FROM statistics;";
-            count = statement.executeUpdate(query); // 쿼리 실행 결과로 영향 받은 레코드의 개수를 반환
+            Statement statement = commons.getStatement();
+            //총설문자수 query
+            String query = "SELECT COUNT(DISTINCT RESPONDENTS_ID) AS TotalCount FROM statistics;";
+            ResultSet resultSet = statement.executeQuery(query);
+
+            if (resultSet.next()) {
+                // count 값을 optionInfoRecord HashMap에 저장   
+                int totalCount = resultSet.getInt("TotalCount"); 
+                optionInfoRecord.put("TotalCount", totalCount);
+            }
+            resultSet.close();
+            statement.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage()); // 예외 발생 시 메시지 출력
+            System.out.println(e.getMessage());
         }
-        return count; // 삭제된 레코드 개수 반환
+        return optionInfoRecord;
     }
+   
     
     //문항
     
@@ -31,7 +68,7 @@ public class OptionInforsDao {
         try {
             Commons commons = new Commons();
             Statement statement = commons.getStatement();
-            //unique_id를 기반으로 respondents 테이블에서 레코드를 선택합니다.
+            //unique_id를 기반으로 respondents 테이블에서 레코드를 선택
             String query = "SELECT * FROM respondents WHERE RESPONDENTS_ID = '" + unique_id + "';";
             ResultSet resultSet = statement.executeQuery(query);
 

@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%@ page import="java.util.HashMap, java.util.ArrayList" %>
-
+<%@ page import="java.util.HashMap, java.util.ArrayList" %>
         <!DOCTYPE html>
         <html lang="en">
-
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +24,8 @@
                             <input type="text" name="search" value="<%= search %>">
                         </label>
                         <button>검색 하기</button>
-                    </form>
+                    </form> 
+                    <P></P>
             </div>
             <div class="container">
                 <table class="table table-bordered table-hover">
@@ -52,25 +51,18 @@
                                         <input type="hidden" name="unique_id" value="<%= optionInforRecord.get("
                                             RESPONDENTS_ID") %>">
 
-                                        <td>
-                                            <%= optionInforRecord.get("RESPONDENTS_ID") %>
-                                        </td>
-                                        <td>
-                                            <%= optionInforRecord.get("RESPONDENTS") %>
-                                        </td>
-
-                                        <td>
-                                            <button type="submit" formaction="/optionInforsDeleteServlet">
-                                                <%= optionInforRecord.get("RESPONDENTS_ID") %>
-                                            </button>
-                                        </td>
-                                        <td>
-
-                                            <button type="submit" formaction="/optionInforSelectServlet">
-                                                <%= optionInforRecord.get("RESPONDENTS") %> 상세정보
-                                            </button>
-                                        </td>
-                                    </tr>
+                                            <td>
+                                                <button type="submit" formaction="/optionInforsDeleteServlet">
+                                                    <%= optionInforRecord.get("RESPONDENTS_ID") %>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                
+                                                <button class="btn btn-outline-dark"type="submit" formaction="/optionInforSelectServlet">
+                                                    <%= optionInforRecord.get("RESPONDENTS") %> 상세정보
+                                                </button>
+                                            </td>
+                                        </tr>
                                     </form>
                                     <% } %>
                         </tbody>
