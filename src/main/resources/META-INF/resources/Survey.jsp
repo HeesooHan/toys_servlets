@@ -9,7 +9,7 @@
         <title>Bootstrap Main</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css">
         <link rel="stylesheet" href="../static/css/commons.css">
- 
+
     <body>
         <%@ include file="/top_menus.jsp" %>
         <br>
